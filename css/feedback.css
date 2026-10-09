@@ -1,0 +1,80 @@
+.page-feedback { display: flex; flex-flow: column nowrap; justify-content: flex-start; align-items: stretch; }
+
+.page-feedback .site-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 12px 16px;
+}
+.page-feedback .logo { order: 1; flex: 0 0 70px; }
+.page-feedback .site-title { order: 2; flex: 1 1 auto; }
+.page-feedback .back-link { order: 3; flex: 0 0 auto; }
+
+.page-feedback main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  align-content: flex-start;
+  gap: 20px;
+  padding: 40px 16px;
+}
+.page-feedback main > h2 { margin: 0; }
+.page-feedback main > .back-link { align-self: center; }
+
+.page-feedback form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 720px;
+  padding: 28px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent-dark);
+}
+.page-feedback form p { margin: 0; }
+
+.page-feedback fieldset {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+}
+.page-feedback legend { padding: 0 8px; font: 700 1.1rem var(--font-head); color: white; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+fieldset .field { flex: 1 1 220px; }
+fieldset .field--grow { flex-grow: 2; order: 1; }
+fieldset .field:nth-of-type(2) { order: 2; }
+fieldset .field--narrow { flex: 0 1 120px; order: 3; align-self: flex-end; }
+form > .field { flex: 0 0 auto; }
+
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid #3a434e;
+  border-radius: 4px;
+}
+textarea { resize: vertical; }
+
+.field-check { display: flex; flex-flow: row nowrap; align-items: center; gap: 10px; }
+.field-check input { flex: 0 0 auto; width: 20px; height: 20px; accent-color: var(--accent-dark); }
+.field-check label { flex: 1 1 auto; }
+
+.form-actions { display: flex; flex-flow: row wrap; justify-content: flex-end; align-items: stretch; gap: 12px; }
+.form-actions button { padding: 12px 20px; font: 500 1rem var(--font-body); border-radius: 4px; cursor: pointer; }
+.btn-reset  { order: 1; flex: 1 1 140px; align-self: center; color: var(--text); background-color: transparent; border: 1px solid #3a434e; }
+.btn-submit { order: 2; flex: 2 1 200px; align-self: stretch; color: #14181d; background-color: var(--accent); border: 1px solid var(--accent-dark); }
+
+.page-feedback .site-footer { flex: 0 0 auto; text-align: center; }

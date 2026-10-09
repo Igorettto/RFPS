@@ -1,0 +1,93 @@
+.page-index {
+  --header-h: 270px;
+  position: relative;
+  padding: var(--header-h) 24px 0;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "main aside" "footer footer";
+  column-gap: 24px;
+}
+.page-index main { grid-area: main; display: grid; align-content: start; min-width: 0; padding-top: 24px; }
+.page-index aside { grid-area: aside; }
+.page-index .site-footer { grid-area: footer; margin: 24px -24px 0; }
+
+.page-index .site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  grid-template-columns: 90px 1fr auto;
+  grid-template-areas:
+    "logo  title account"
+    "logo  desc  account"
+    "nav   nav   nav"
+    "quick quick quick";
+  row-gap: 8px;
+}
+.page-index .logo { grid-area: logo; width: 90px; height: 90px; }
+.page-index .site-title { grid-area: title; font-size: 1.4rem; }
+.page-index .site-desc { grid-area: desc; margin: 0; color: var(--muted); }
+.page-index .account-links { grid-area: account; display: grid; gap: 8px; margin: 0; }
+.page-index .main-nav { grid-area: nav; }
+.page-index .quick-links { grid-area: quick; margin: 0; font-size: .9rem; color: var(--muted); }
+.quick-links a[href^="#"] { margin: 0 4px; }
+
+.page-index main > section,
+.page-index main > article {
+  margin: 0;
+  padding: 24px 28px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+}
+.page-index main > * + * { border-top: 0; }
+#meta ~ #poslugy { border-top: 3px solid var(--accent-dark); }
+
+#meta h2 + p::before { content: "⌨️ "; font-size: 1.4em; vertical-align: middle; }
+#meta ol { padding-left: 1.6em; }
+#meta li { margin-bottom: .5em; }
+
+#poslugy { position: relative; top: 0; z-index: 5; overflow-x: auto; transition: top .4s ease; }
+#poslugy:hover { top: 2vh; }
+
+.services-table { width: 100%; border-collapse: collapse; }
+.services-table caption { padding-bottom: 12px; font: 700 1.1rem var(--font-head); text-align: left; }
+.services-table th, .services-table td { padding: 10px 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.services-table thead th { background-color: #11151a; color: var(--accent); }
+.services-table tfoot td { font-size: .85rem; color: var(--muted); }
+
+.page-index aside {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  z-index: 10;
+  margin-top: 24px;
+  padding: 20px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+}
+.page-index aside h2 { font-size: 1.15rem; }
+.page-index aside h2:not(:first-child) { margin-top: 1.4em; }
+.page-index aside ul { margin: 0; padding-left: 1.2em; }
+
+.footer-col { float: left; width: 48%; }
+.footer-col--right { float: right; }
+.footer-col ul { margin: 0; padding-left: 1.2em; }
+.page-index .site-footer::after { content: ""; display: block; clear: both; }
+.page-index .copyright { clear: both; padding-top: 16px; }
+
+.site-footer address { font-size: 1rem; }
+.site-footer address:hover { font-size: 1.2rem; transition: font-size .4s ease 2s; }
+.site-footer a[href*="instagram"] { font-weight: 500; }
+
+@media (max-width: 860px) {
+  .page-index { padding-top: 0; grid-template-columns: minmax(0, 1fr); grid-template-areas: "main" "aside" "footer"; }
+  .page-index .site-header {
+    position: relative; height: auto; margin: 0 -24px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "title" "desc" "account" "nav" "quick";
+  }
+  .page-index .main-nav ul { grid-auto-flow: row; }
+  .page-index aside { position: static; }
+  .footer-col, .footer-col--right { float: none; width: auto; }
+}

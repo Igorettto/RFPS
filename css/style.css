@@ -1,0 +1,87 @@
+:root {
+  color-scheme: dark;
+  --bg: rgb(15, 18, 22);
+  --surface: #1a1f26;
+  --line: #2c333c;
+  --text: #e6e9ed;
+  --muted: #9aa5b1;
+  --accent: hsl(45, 100%, 51%);
+  --accent-dark: darkgoldenrod;
+  --font-head: "Exo 2", "Segoe UI", Arial, sans-serif;
+  --font-body: "Roboto", Arial, sans-serif;
+  --header-h: 106px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font: 400 1rem/1.65 var(--font-body);
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.25; color: white; }
+h2 { font-size: 1.6rem; margin: 0 0 .8em; }
+h3 { font-size: 1.2rem; margin: 0 0 .6em; }
+
+a { color: var(--accent); }
+
+.site-header {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  column-gap: 16px;
+  padding: 16px 32px;
+  background-color: #11151a;
+  border-bottom: 3px solid var(--accent-dark);
+  z-index: 100;
+}
+.site-title { margin: 0; font-size: 1.6rem; }
+.site-title::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 40px;
+  margin-top: 4px;
+  background-color: var(--accent);
+  animation: scan 2.5s ease-in-out infinite alternate;
+}
+@keyframes scan { from { width: 40px; } to { width: 180px; } }
+
+.logo { width: 70px; height: 70px; object-fit: cover; border-radius: 50%; background-color: white; }
+
+.back-link { margin: 0; }
+.back-link a, .account-links a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--accent-dark);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.main-nav ul { display: grid; grid-auto-flow: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.main-nav a {
+  display: block;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  background-color: transparent;
+  border: 1px solid var(--line);
+  transition: background-color .3s, color .3s, border-color .3s, transform .3s;
+}
+.main-nav a:hover {
+  background-color: var(--accent);
+  color: #14181d;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.site-footer { padding: 20px 32px; background-color: #11151a; border-top: 3px solid var(--accent-dark); color: var(--muted); }
+.site-footer h2 { margin: 0 0 .4em; font-size: 1.1rem; }
+.site-footer address { font-style: normal; }
+.copyright { margin: 0; text-align: center; }

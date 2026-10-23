@@ -19,6 +19,8 @@
 .page-catalog main > h2,
 .page-catalog main > p { grid-column: 1 / -1; margin: 0; }
 
+.page-catalog main > pre { grid-column: 1 / -1; }
+
 .page-catalog main > article {
   padding: 16px;
   background-color: var(--surface);

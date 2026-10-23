@@ -41,18 +41,14 @@ a { color: var(--accent); }
   z-index: 100;
 }
 .site-title { margin: 0; font-size: 1.6rem; }
-.site-title::after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 40px;
-  margin-top: 4px;
-  background-color: var(--accent);
-  animation: scan 2.5s ease-in-out infinite alternate;
-}
-@keyframes scan { from { width: 40px; } to { width: 180px; } }
 
-.logo { width: 70px; height: 70px; object-fit: cover; border-radius: 50%; background-color: white; }
+.logo { 
+  width: 70px; 
+  height: 70px; 
+  object-fit: cover; 
+  border-radius: 50%; 
+  background-color: white; 
+}
 
 .back-link { margin: 0; }
 .back-link a, .account-links a {

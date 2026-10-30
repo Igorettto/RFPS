@@ -81,9 +81,14 @@
 .site-footer a[href*="instagram"] { font-weight: 500; }
 
 @media (max-width: 860px) {
-  .page-index { padding-top: 0; grid-template-columns: minmax(0, 1fr); grid-template-areas: "main" "aside" "footer"; }
+  .page-index {
+    padding-top: 0;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "header" "main" "aside" "footer";
+  }
   .page-index .site-header {
-    position: relative; height: auto; margin: 0 -24px;
+    position: relative; grid-area: header; height: auto; margin: 0 -24px;
     grid-template-columns: 1fr;
     grid-template-areas: "logo" "title" "desc" "account" "nav" "quick";
   }

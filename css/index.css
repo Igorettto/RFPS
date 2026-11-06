@@ -57,6 +57,7 @@
 .services-table tfoot td { font-size: .85rem; color: var(--muted); }
 
 .page-index aside {
+  position: -webkit-sticky;
   position: sticky;
   top: 16px;
   align-self: start;
@@ -95,4 +96,14 @@
   .page-index .main-nav ul { grid-auto-flow: row; }
   .page-index aside { position: static; }
   .footer-col, .footer-col--right { float: none; width: auto; }
+}
+
+@media (max-width: 480px) {
+  .page-index { padding-right: 12px; padding-left: 12px; }
+  .page-index .site-header { margin-right: -12px; margin-left: -12px; padding: 16px; }
+  .page-index .site-title { font-size: 1.25rem; }
+  .page-index main > section,
+  .page-index main > article { padding: 18px 16px; }
+  .page-index .site-footer { margin-right: -12px; margin-left: -12px; padding: 20px 16px; }
+  .services-table { min-width: 36rem; }
 }
